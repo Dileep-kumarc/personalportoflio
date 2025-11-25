@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Scroll Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .section {
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .section:nth-child(1) { background: #ff6b6b; color: white; }
+        .section:nth-child(2) { background: #4ecdc4; color: white; }
+        .section:nth-child(3) { background: #45b7d1; color: white; }
+        .section:nth-child(4) { background: #96ceb4; color: white; }
+        .section:nth-child(5) { background: #ffeaa7; color: #333; }
+        
+        /* Ensure mobile scrolling */
+        @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch;
+                touch-action: pan-y;
+            }
+            
+            .section {
+                position: relative !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section">Section 1 - Skills</div>
+    <div class="section">Section 2 - Projects</div>
+    <div class="section">Section 3 - Experience</div>
+    <div class="section">Section 4 - Education</div>
+    <div class="section">Section 5 - Contact</div>
+    
+    <script>
+        // Test if mobile scrolling works
+        console.log('Mobile test loaded');
+        console.log('Screen width:', window.innerWidth);
+        console.log('Is mobile:', window.innerWidth <= 768);
+        
+        // Log scroll events
+        window.addEventListener('scroll', () => {
+            console.log('Scrolled to:', window.pageYOffset);
+        });
+        
+        // Test responsive behavior
+        const testResponsive = () => {
+            console.log('=== RESPONSIVE TEST ===');
+            console.log('Screen dimensions:', window.innerWidth + 'x' + window.innerHeight);
+            console.log('Device pixel ratio:', window.devicePixelRatio);
+            console.log('User agent:', navigator.userAgent.substring(0, 50) + '...');
+            console.log('Touch support:', 'ontouchstart' in window);
+            
+            // Test theme toggle visibility
+            const themeToggle = document.querySelector('.theme-toggle');
+            if (themeToggle) {
+                const styles = window.getComputedStyle(themeToggle);
+                console.log('Theme toggle visibility:', styles.visibility);
+                console.log('Theme toggle opacity:', styles.opacity);
+                console.log('Theme toggle display:', styles.display);
+            }
+            console.log('======================');
+        };
+        
+        // Run test on load and resize
+        testResponsive();
+        window.addEventListener('resize', testResponsive);
+        window.addEventListener('orientationchange', () => {
+            setTimeout(testResponsive, 200);
+        });
+    </script>
+</body>
+</html>
