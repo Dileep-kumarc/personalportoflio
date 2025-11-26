@@ -5,6 +5,7 @@ import { Briefcase, GraduationCap } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid"
 import { Parallax3D, ParallaxLayer, MouseParallax } from "@/components/ui/parallax-scroll"
+import { TextRevealWord, TextRevealBlur } from "@/components/ui/text-reveal"
 
 import Image from "next/image"
 
@@ -70,17 +71,14 @@ export function ExperienceNew() {
         <section id="experience" className="py-20 px-4">
             <Container>
                 <Parallax3D depth={50} rotateX={true} rotateY={false}>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-12"
-                    >
-                        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-                            Experience & Education
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-600 dark:from-neutral-50 dark:to-neutral-400">
+                            <TextRevealWord text="Experience & Education" />
                         </h2>
-                        <p className="text-neutral-400 mt-4">My professional journey and academic background</p>
-                    </motion.div>
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-4">
+                            <TextRevealBlur text="My professional journey and academic background" delay={0.3} />
+                        </p>
+                    </div>
                 </Parallax3D>
 
                 <div className="space-y-16">

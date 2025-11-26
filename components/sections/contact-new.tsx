@@ -7,23 +7,21 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Parallax3D, MouseParallax, ParallaxLayer } from "@/components/ui/parallax-scroll"
+import { TextRevealWord, TextRevealBlur } from "@/components/ui/text-reveal"
 
 export function ContactNew() {
     return (
         <section id="contact" className="py-20 px-4">
             <Container>
                 <Parallax3D depth={50} rotateX={true} rotateY={false}>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-12"
-                    >
-                        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-                            Let's Connect
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-600 dark:from-neutral-50 dark:to-neutral-400">
+                            <TextRevealWord text="Let's Connect" />
                         </h2>
-                        <p className="text-neutral-400 mt-4">Ready to bring your ideas to life</p>
-                    </motion.div>
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-4">
+                            <TextRevealBlur text="Ready to bring your ideas to life" delay={0.3} />
+                        </p>
+                    </div>
                 </Parallax3D>
 
                 <div className="max-w-4xl mx-auto">

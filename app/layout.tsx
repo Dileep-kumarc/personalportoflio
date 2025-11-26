@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
+import "lenis/dist/lenis.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
 import { FloatingDock } from "@/components/layout/floating-dock";
 import { FooterNew } from "@/components/layout/footer-new";
 import { CustomCursor } from "@/components/ui/custom-cursor";
@@ -45,14 +47,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NoiseOverlay />
-          <CustomCursor />
-          <AuroraBackground className="dark:hidden" />
-          <main className="min-h-screen font-sans">
-            {children}
-          </main>
-          <FloatingDock />
-          <FooterNew />
+          <SmoothScrollProvider>
+            <NoiseOverlay />
+            <CustomCursor />
+            <AuroraBackground className="dark:hidden" />
+            <main className="min-h-screen font-sans">
+              {children}
+            </main>
+            <FloatingDock />
+            <FooterNew />
+          </SmoothScrollProvider>
         </ThemeProvider>
       </body>
     </html>
