@@ -29,12 +29,14 @@ export const BentoGridItem = ({
     description,
     header,
     icon,
+    id,
 }: {
     className?: string
     title?: string | React.ReactNode
     description?: string | React.ReactNode
     header?: React.ReactNode
     icon?: React.ReactNode
+    id?: string
 }) => {
     const divRef = useRef<HTMLDivElement>(null)
     const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -66,6 +68,7 @@ export const BentoGridItem = ({
     return (
         <motion.div
             ref={divRef}
+            id={id}
             onMouseMove={handleMouseMove}
             onFocus={handleFocus}
             onBlur={handleBlur}

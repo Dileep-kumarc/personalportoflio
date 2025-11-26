@@ -24,6 +24,12 @@
   - [x] Add Custom Cursor (optional) <!-- id: 14 -->
   - [x] Optimize Performance (Images, Fonts) <!-- id: 15 -->
 
+- [x] **Enhancements**
+  - [x] Improve Tech Stack visuals in `bento-content.tsx` <!-- id: 18 -->
+  - [x] Fix "Skills" navbar link scrolling <!-- id: 19 -->
+  - [x] Separate Skills into dedicated section <!-- id: 20 -->
+
 - [x] **Verification**
   - [x] Verify build <!-- id: 16 -->
   - [x] Manual testing of all sections <!-- id: 17 -->
+  - [x] Final Polish (Code cleanup, Metadata, Assets check) <!-- id: 21 -->

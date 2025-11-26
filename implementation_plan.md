@@ -1,46 +1,43 @@
-# UI/UX Redesign: Bento Grid & Cyber-Minimalism
+# World Class Design Overhaul Plan
 
-The goal is to create a visually striking, non-traditional portfolio experience that differs significantly from the standard vertical scroll layout.
+The goal is to transform the portfolio into a visually stunning, "world-class" experience by introducing advanced micro-interactions, 3D elements, and dynamic animations.
 
-## Design Concept: "The Digital Workspace"
-- **Layout**: A **Bento Grid** architecture where content (About, Skills, Projects) is organized into a mosaic of interactive cards.
-- **Navigation**: A **Floating Dock** at the bottom of the screen, replacing the traditional top navbar.
-- **Aesthetics**: High contrast, "Cyber-minimalism", heavy use of glassmorphism, glow effects, and fluid animations.
-- **Hero**: A full-screen, immersive introduction that transitions into the grid.
+## User Review Required
+- **Performance**: Some of these effects (3D, heavy animations) might impact performance on lower-end devices. I will optimize where possible.
 
 ## Proposed Changes
 
-### 1. Navigation Overhaul
-- **Remove**: Standard top `Navbar`.
-- **Add**: `FloatingDock` component at the bottom center of the screen.
-- **Features**: Magnification effect on hover (like macOS dock).
+### 1. New UI Components (`components/ui`)
+- **`tracing-beam.tsx`**: A timeline component with a glowing beam that follows the user's scroll position.
+- **`3d-pin.tsx`**: A 3D perspective container that makes cards "pop" and float in 3D space on hover.
+- **`text-generate-effect.tsx`**: A text animation that reveals words character by character with a "decoding" style.
+- **`background-beams.tsx`**: A background effect with shooting light beams.
+- **`magnetic-button.tsx`**: A button wrapper that adds a magnetic pull effect to the cursor.
 
-### 2. Hero Section Revamp
-- **Style**: Large, bold typography with a "Spotlight" effect.
-- **Animation**: Text reveal animations and a dynamic background (keeping the 3D stars but tweaking them, or adding a gradient mesh).
+### 2. Section Upgrades
 
-### 3. Main Content: The Bento Grid
-- **Structure**: A responsive CSS grid wrapper.
-- **Components**:
-  - `ProfileCard`: Large card with photo and bio.
-  - `TechStackCard`: Marquee or grid of icons.
-  - `ProjectCard`: Featured projects with preview images/videos.
-  - `StatsCard`: GitHub stats or years of experience.
-  - `SocialCard`: Quick links to socials.
-  - `MapCard`: stylized location map.
+#### `components/sections/experience-new.tsx`
+- **Upgrade**: Wrap the experience list in the `TracingBeam` component.
+- **Style**: Connect the cards visually with the beam.
 
-### 4. Typography & Colors
-- **Font**: Stick with Geist but use heavier weights (800/900) for headers.
-- **Colors**: Deep dark background (`#0a0a0a`) with vibrant accent glows (Cyan/Purple).
+#### `components/sections/projects-new.tsx`
+- **Upgrade**: Replace standard Bento cards with `PinContainer` (3D Pin) for featured projects.
+- **Interaction**: Cards will rotate and float when hovered, revealing more details.
 
-## Implementation Steps
+#### `components/sections/hero-new.tsx`
+- **Upgrade**: Use `TextGenerateEffect` for the main headline.
+- **Background**: Add `BackgroundBeams` for a dynamic backdrop.
 
-1.  **Create `FloatingDock`**: A new navigation component.
-2.  **Create `BentoGrid` Layout**: A container component for the grid.
-3.  **Refactor Sections**: Break down existing sections into "Bento Cards".
-4.  **Update `page.tsx`**: Assemble the new layout.
-5.  **Update `globals.css`**: Add necessary utility classes for the grid and glow effects.
+#### `components/sections/contact-new.tsx`
+- **Upgrade**: Add a "Globe" or "World Map" visualization (using a lightweight SVG or canvas approach) to emphasize global connectivity.
 
-## Verification
-- Check responsiveness (Bento grids need careful mobile handling).
-- Verify performance of multiple animations.
+### 3. Global Polish
+- **Typography**: Fine-tune font weights and letter spacing.
+- **Buttons**: Replace standard buttons with `MagneticButton` versions.
+
+## Verification Plan
+
+### Manual Verification
+- **Performance**: Check FPS during scrolling.
+- **Responsiveness**: Ensure 3D elements don't break mobile layout (fall back to simpler views if needed).
+- **Visuals**: Verify that the "wow" factor is achieved without being overwhelming.

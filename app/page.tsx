@@ -4,11 +4,14 @@ import { ProjectsNew } from "@/components/sections/projects-new"
 import { ExperienceNew } from "@/components/sections/experience-new"
 import { ContactNew } from "@/components/sections/contact-new"
 
+import { SkillsNew } from "@/components/sections/skills-new"
+
 export default function Home() {
   return (
     <div className="flex flex-col">
       <HeroNew />
       <BentoContent />
+      <SkillsNew />
       <ProjectsNew />
       <ExperienceNew />
       <ContactNew />

@@ -62,7 +62,6 @@ export function HeroNew() {
                     {[
                         { number: "6+", label: "Projects" },
                         { number: "3+", label: "Internships" },
-                        { number: "2+", label: "Years Learning" },
                     ].map((stat, i) => (
                         <div key={i} className="text-center">
                             <motion.span

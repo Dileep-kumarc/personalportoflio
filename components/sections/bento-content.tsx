@@ -5,12 +5,14 @@ import { Container } from "@/components/ui/container"
 import { Code, Briefcase, Mail, MapPin, Github, Linkedin, Twitter } from "lucide-react"
 import Image from "next/image"
 import { MouseParallax, Parallax3D } from "@/components/ui/parallax-scroll"
+import { motion } from "framer-motion"
 
 const Skeleton = () => (
     <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800 border border-white/[0.1]"></div>
 )
 
 export function BentoContent() {
+
     return (
         <section id="about" className="py-20 px-4">
             <Container>
@@ -54,27 +56,6 @@ export function BentoContent() {
                                     </div>
                                 }
                                 icon={<MapPin className="h-4 w-4 text-neutral-500" />}
-                            />
-                        </MouseParallax>
-
-                        {/* Skills Card - Wide */}
-                        <MouseParallax strength={5}>
-                            <BentoGridItem
-                                title="Tech Stack"
-                                description="Java • Python • JavaScript • React • Next.js • Spring Boot • MySQL"
-                                header={
-                                    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-white/[0.1] items-center justify-center">
-                                        <div className="flex gap-4 flex-wrap justify-center p-4">
-                                            {["☕", "🐍", "⚛️", "🍃", "🐬"].map((emoji, i) => (
-                                                <span key={i} className="text-4xl filter grayscale hover:grayscale-0 transition-all">
-                                                    {emoji}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                }
-                                className="md:col-span-2"
-                                icon={<Code className="h-4 w-4 text-neutral-500" />}
                             />
                         </MouseParallax>
 

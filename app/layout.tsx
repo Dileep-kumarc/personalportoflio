@@ -29,6 +29,21 @@ export const metadata: Metadata = {
   title: "Dileep Kumar C | Full Stack Developer",
   description: "Portfolio of Dileep Kumar C — showcasing full stack development and AI-based projects.",
   keywords: ["Dileep Kumar C", "Full Stack Developer", "Portfolio", "Web Developer", "Java Developer", "AI Tools"],
+  openGraph: {
+    title: "Dileep Kumar C | Full Stack Developer",
+    description: "Portfolio of Dileep Kumar C — showcasing full stack development and AI-based projects.",
+    url: "https://dileepkumarc.vercel.app", // Assuming Vercel deployment
+    siteName: "Dileep Kumar C Portfolio",
+    images: [
+      {
+        url: "/passport image.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
